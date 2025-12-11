@@ -90,11 +90,6 @@ htmlcov/
 # Jupyter Notebook
 .ipynb_checkpoints
 
-# Docker
-**/Dockerfile*
-**/.dockerignore
-docker-compose.override.yml
-
 # Logs
 *.log
 logs/
@@ -148,3 +143,4 @@ desktop.ini
 # Keep track of local configs that may be useful to commit by exception
 !/.gitattributes
 !/.gitignore
+.DS_Store
