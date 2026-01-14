@@ -1,0 +1,48 @@
+# Docker ignore file for ZavaStorefront
+# Reduces build context size and improves build performance
+
+# Git
+.git
+.gitignore
+.gitattributes
+
+# IDE and editors
+.vs
+.vscode
+.idea
+*.swp
+*.swo
+
+# Build outputs
+bin/
+obj/
+out/
+
+# NuGet
+*.nupkg
+*.snupkg
+
+# Azure
+.azure/
+
+# Documentation
+*.md
+!README.md
+
+# Test files
+*.Tests/
+*.Test/
+**/TestResults/
+
+# Logs
+logs/
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Docker files (prevent recursive builds)
+Dockerfile*
+docker-compose*
+.dockerignore
