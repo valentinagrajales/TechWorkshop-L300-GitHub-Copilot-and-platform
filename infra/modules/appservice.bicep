@@ -81,7 +81,7 @@ resource appService 'Microsoft.Web/sites@2023-12-01' = {
     httpsOnly: true
     clientAffinityEnabled: false
     siteConfig: {
-      linuxFxVersion: 'DOTNETCORE|6.0' // Will be updated to container after first deployment
+      linuxFxVersion: 'DOTNETCORE|8.0' // .NET 8.0 runtime for container deployment
       acrUseManagedIdentityCreds: true
       acrUserManagedIdentityID: managedIdentityClientId
       alwaysOn: false // Can be disabled for dev to save costs
