@@ -1,0 +1,24 @@
+# Azure Developer CLI (azd) configuration
+# yaml-language-server: $schema=https://raw.githubusercontent.com/Azure/azure-dev/main/schemas/v1.0/azure.yaml.json
+
+name: zava-storefront
+metadata:
+  template: azd-init@1.0.0
+
+# Infrastructure configuration
+infra:
+  provider: bicep
+  path: infra
+  module: main
+
+# Service definitions
+services:
+  web:
+    project: ./src
+    language: dotnet
+    host: appservice
+    # Use ACR Tasks for building without local Docker
+    docker:
+      path: ./src/Dockerfile
+      context: ./src
+      remoteBuild: true
