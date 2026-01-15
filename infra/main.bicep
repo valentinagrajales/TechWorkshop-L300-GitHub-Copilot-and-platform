@@ -116,6 +116,7 @@ module aiFoundry 'modules/ai-foundry.bicep' = {
     location: location
     aiFoundryName: !empty(aiFoundryName) ? aiFoundryName : '${abbrs.aiFoundry}${resourceToken}'
     managedIdentityPrincipalId: identity.outputs.principalId
+    logAnalyticsWorkspaceId: monitoring.outputs.logAnalyticsId
     tags: {
       'azd-env-name': environmentName
     }

@@ -39,6 +39,22 @@ namespace ZavaStorefront.Controllers
 
             _logger.LogInformation("Received chat message from user");
 
+            var isSafe = await _chatService.IsContentSafeAsync(request.Message);
+            if (!isSafe)
+            {
+                var warningMessage = new ChatMessage
+                {
+                    Role = "assistant",
+                    Content = "Thanks for your message! I’m not able to help with that request. Please try a different question.",
+                    Timestamp = DateTime.UtcNow
+                };
+
+                return Json(new
+                {
+                    assistantMessage = warningMessage
+                });
+            }
+
             var chatHistory = GetChatHistory();
 
             // Add user message to history
